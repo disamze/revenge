@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A Message for You</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/833/833472.png" type="image/png">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: white;
+      font-family: 'Courier New', monospace;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      transition: background 1s ease;
+    }
+
+    .message {
+      text-align: center;
+      max-width: 600px;
+      opacity: 1;
+      transition: opacity 1s ease;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+
+    .glitch {
+      color: red;
+      font-size: 2em;
+      animation: glitch 0.3s infinite;
+    }
+
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(2px, -2px); }
+      60% { transform: translate(-1px, 1px); }
+      80% { transform: translate(1px, -1px); }
+      100% { transform: translate(0); }
+    }
+
+    .reveal {
+      display: none;
+      font-size: 1.5em;
+      margin-top: 40px;
+      color: #00ffcc;
+    }
+  </style>
+</head>
+<body>
+  <div class="message" id="message">
+    <h1>Hello Again...</h1>
+    <p>I’ve been watching you. I know what you said. I know what you did. And now... it’s time.</p>
+    <p class="glitch" id="glitch">You can't hide.</p>
+    <div class="reveal" id="reveal">😆 GOTCHA! Just a prank from amaze. Love you, sis!</div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.body.style.background = "#111";
+      document.getElementById("message").style.opacity = "0.5";
+      document.getElementById("glitch").textContent = "Look behind you...";
+    }, 4000);
+
+    setTimeout(() => {
+      document.getElementById("glitch").style.display = "none";
+      document.getElementById("reveal").style.display = "block";
+      document.body.style.background = "#222";
+    }, 7000);
+  </script>
+</body>
+</html>
