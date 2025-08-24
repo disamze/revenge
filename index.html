@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>A Message for You</title>
+  <title>A Message for Swarnvana</title>
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/833/833472.png" type="image/png">
   <style>
     body {
@@ -52,34 +52,28 @@
       100% { transform: translate(0); }
     }
 
-    .reveal {
+    .jumpscare {
       display: none;
-      font-size: 1.5em;
-      margin-top: 40px;
-      color: #00ffcc;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: black;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .jumpscare img {
+      width: 100%;
+      max-width: 600px;
     }
   </style>
 </head>
 <body>
+  <audio id="scream">
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_7e3b9b9f5e.mp3?filename=creepy-whisper-112842.mp3" type="audio/mpeg">
+  </audio>
+
   <div class="message" id="message">
-    <h1>Hello Again...</h1>
-    <p>I’ve been watching you. I know what you said. I know what you did. And now... it’s time.</p>
-    <p class="glitch" id="glitch">You can't hide.</p>
-    <div class="reveal" id="reveal">😆 GOTCHA! Just a prank from amaze. Love you, sis!</div>
-  </div>
-
-  <script>
-    setTimeout(() => {
-      document.body.style.background = "#111";
-      document.getElementById("message").style.opacity = "0.5";
-      document.getElementById("glitch").textContent = "Look behind you...";
-    }, 4000);
-
-    setTimeout(() => {
-      document.getElementById("glitch").style.display = "none";
-      document.getElementById("reveal").style.display = "block";
-      document.body.style.background = "#222";
-    }, 7000);
-  </script>
-</body>
-</html>
