@@ -77,3 +77,29 @@
   </audio>
 
   <div class="message" id="message">
+    <h1>Hello Swarnvana...</h1>
+    <p>I’ve been watching you. I know what you said. I know what you did. And now... it’s time.</p>
+    <p class="glitch" id="glitch">You can't hide.</p>
+  </div>
+
+  <div class="jumpscare" id="jumpscare">
+    <img src="https://wallpapersafari.com/wp-content/uploads/18/jumpscare-backgrounds-1920x1080.jpg" alt="Jumpscare face">
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("glitch").textContent = "Look behind you...";
+    }, 4000);
+
+    setTimeout(() => {
+      document.getElementById("message").style.display = "none";
+      document.getElementById("jumpscare").style.display = "flex";
+      document.getElementById("scream").play();
+    }, 6000);
+
+    setTimeout(() => {
+      window.location.href = "https://urlme.me/";
+    }, 9000);
+  </script>
+</body>
+</html>
